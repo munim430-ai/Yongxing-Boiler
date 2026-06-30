@@ -6,15 +6,11 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* CTA Strip */}
-      <div className="bg-orange-500 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="bg-orange-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-white font-extrabold text-xl">
-              Ready to Cut Your Fuel Costs by 60%?
-            </p>
-            <p className="text-orange-100 text-sm">
-              Get a free savings calculation today.
-            </p>
+            <p className="text-white font-extrabold text-xl">Ready to Cut Your Fuel Costs by 60%?</p>
+            <p className="text-orange-100 text-sm mt-0.5">Get a free savings calculation today.</p>
           </div>
           <a
             href="#quote"
@@ -30,28 +26,30 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Image
-              src="https://www.yx-boiler.com/wp-content/uploads/2026/04/100hw.png"
-              alt="Yongxing Boiler"
-              width={140}
-              height={48}
-              className="h-12 w-auto object-contain mb-4 brightness-200"
-              unoptimized
-            />
-            <p className="text-sm leading-relaxed text-gray-400 mb-4">
+            {/* Logo on white pill so colours show clearly on dark bg */}
+            <div className="inline-flex items-center gap-3 bg-white rounded-2xl px-4 py-3 mb-5">
+              <Image
+                src="/logo.png"
+                alt="Yongxing Boiler"
+                width={52}
+                height={52}
+                className="w-12 h-12 object-contain"
+              />
+              <div className="leading-tight">
+                <span className="block text-sm font-extrabold text-blue-900">YONGXING BOILER</span>
+                <span className="block text-xs font-semibold text-orange-500">Bangladesh</span>
+              </div>
+            </div>
+
+            <p className="text-sm leading-relaxed text-gray-400 mb-5">
               Yongxing Boiler — Bangladesh Authorized Representative.
-              Operated by Keystone Consultancy, Gazipur, Dhaka Division, Bangladesh.
+              Operated by <span className="text-white font-semibold">Keystone Consultancy</span>,
+              Gazipur, Dhaka Division, Bangladesh.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-blue-900 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-                ISO 9001
-              </span>
-              <span className="bg-green-900 text-green-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-                50+ Countries
-              </span>
-              <span className="bg-orange-900 text-orange-300 text-xs font-semibold px-2.5 py-1 rounded-full">
-                Boiler Act 2022 Compliant
-              </span>
+              <span className="bg-blue-900/60 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">ISO 9001</span>
+              <span className="bg-green-900/60 text-green-300 text-xs font-semibold px-2.5 py-1 rounded-full">50+ Countries</span>
+              <span className="bg-orange-900/60 text-orange-300 text-xs font-semibold px-2.5 py-1 rounded-full">Boiler Act 2022 Compliant</span>
             </div>
           </div>
 
@@ -68,10 +66,7 @@ export default function Footer() {
                 { label: "Request Quote", href: "#quote" },
               ].map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-gray-400 hover:text-orange-400 transition-colors"
-                  >
+                  <a href={l.href} className="text-gray-400 hover:text-orange-400 transition-colors">
                     {l.label}
                   </a>
                 </li>
@@ -84,31 +79,28 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <span className="text-orange-400 mt-0.5">📍</span>
+                <span className="text-orange-400 mt-0.5 flex-shrink-0">📍</span>
                 <span className="text-gray-400">Gazipur, Dhaka Division, Bangladesh</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-orange-400 mt-0.5">📞</span>
+                <span className="text-orange-400 mt-0.5 flex-shrink-0">📞</span>
                 <a href="tel:+8801941646278" className="text-gray-400 hover:text-white transition-colors">
                   +880 1941-646278
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-orange-400 mt-0.5">✉️</span>
-                <a
-                  href="mailto:hasibulmunim@gmail.com"
-                  className="text-gray-400 hover:text-white transition-colors break-all"
-                >
+                <span className="text-orange-400 mt-0.5 flex-shrink-0">✉️</span>
+                <a href="mailto:hasibulmunim@gmail.com" className="text-gray-400 hover:text-white transition-colors break-all">
                   hasibulmunim@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-orange-400 mt-0.5">💬</span>
+                <span className="text-orange-400 mt-0.5 flex-shrink-0">💬</span>
                 <span className="text-gray-400">WeChat: hasibul_munim</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-orange-400 mt-0.5">🕐</span>
-                <span className="text-gray-400">Sat–Thu, 9:00 AM – 6:00 PM (BST)</span>
+                <span className="text-orange-400 mt-0.5 flex-shrink-0">🕐</span>
+                <span className="text-gray-400">Sat–Thu, 9 AM – 6 PM BST</span>
               </li>
             </ul>
 
@@ -129,7 +121,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500">
           <p>© {year} Yongxing Boiler Bangladesh · Operated by Keystone Consultancy</p>
-          <p>Compliant with Boiler Act 2022 & Boiler Rules 2025</p>
+          <p>Compliant with Boiler Act 2022 &amp; Boiler Rules 2025</p>
         </div>
       </div>
     </footer>

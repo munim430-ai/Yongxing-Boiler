@@ -20,17 +20,21 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#top" className="flex items-center gap-3 flex-shrink-0">
             <Image
-              src="https://www.yx-boiler.com/wp-content/uploads/2026/04/100hw.png"
+              src="/logo.png"
               alt="Yongxing Boiler"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain"
-              unoptimized
+              width={56}
+              height={56}
+              className="h-12 w-12 object-contain"
+              priority
             />
-            <span className="hidden sm:block text-sm font-bold text-blue-900 leading-tight">
-              Bangladesh<br />
-              <span className="text-orange-500 font-semibold text-xs">Authorized Representative</span>
-            </span>
+            <div className="leading-tight">
+              <span className="block text-base font-extrabold text-blue-900 tracking-tight">
+                YONGXING BOILER
+              </span>
+              <span className="block text-xs font-semibold text-orange-500">
+                Bangladesh · Authorized Representative
+              </span>
+            </div>
           </a>
 
           {/* Desktop links */}
@@ -62,6 +66,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+            aria-label="Toggle menu"
           >
             {open ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,25 +83,27 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-2">
+        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-3 space-y-1">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-2 text-sm font-medium text-gray-700 hover:text-orange-500"
+              className="block py-2.5 text-sm font-medium text-gray-700 hover:text-orange-500 border-b border-gray-50"
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="https://wa.me/8801941646278"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-full w-fit"
-          >
-            WhatsApp Us
-          </a>
+          <div className="pt-2">
+            <a
+              href="https://wa.me/8801941646278"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-500 text-white text-sm font-semibold px-4 py-2.5 rounded-full w-fit"
+            >
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       )}
     </nav>

@@ -1,25 +1,35 @@
+"use client";
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image / Visual */}
+          {/* Visual */}
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://yongxing-boiler.com/files/topics/17797658726601.png"
-                alt="Yongxing Boiler Manufacturing"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-blue-900">
+              {/* Factory image with gradient overlay */}
+              <div className="w-full h-80 relative">
+                <Image
+                  src="https://yongxing-boiler.com/files/topics/17797658726601.png"
+                  alt="Yongxing Boiler Manufacturing Plant"
+                  fill
+                  className="object-contain p-6"
+                  unoptimized
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <div className="text-sm font-semibold text-orange-300">Henan Province, China</div>
                 <div className="text-lg font-bold">Taikang Industrial Zone</div>
               </div>
             </div>
 
-            {/* Floating badge */}
+            {/* Floating stat */}
             <div className="absolute -bottom-6 -right-6 bg-orange-500 text-white rounded-2xl p-4 shadow-xl">
               <div className="text-3xl font-extrabold">45+</div>
               <div className="text-sm font-semibold">Years of Excellence</div>
