@@ -20,7 +20,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#top" className="flex items-center gap-3 flex-shrink-0">
             <Image
-              src="https://www.yx-boiler.com/wp-content/uploads/2026/04/100hw.png"
+              src="/logo.png"
               alt="Yongxing Boiler"
               width={120}
               height={40}
